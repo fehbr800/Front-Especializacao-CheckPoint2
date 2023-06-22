@@ -1,38 +1,34 @@
 import { Action } from "./types";
 
-const initialState = {
+type InitialState = {
+  resposta: {
+    "id": number;
+    "name": string;
+    "status": string;
+    "species": string;
+    "type": string;
+    "gender": string;
+    "origin": {
+      "name": string;
+      "url": string;
+    },
+    "location": {
+      "name": string;
+      "url": string
+    }, 
+    "image": string;
+    "episode": [string],
+    "url": string;
+    "created": string;
+  }[];
+  pages: number;
+  error ?: string;
+}
+
+const initialState: InitialState = {
     resposta: [],
-    "info": {
-        "count": 826,
-        "pages": 42,
-        "next": "https://rickandmortyapi.com/api/character/?page=2",
-        "prev": null
-      },
-      "results": [
-        {
-          "id": 1,
-          "name": "Rick Sanchez",
-          "status": "Alive",
-          "species": "Human",
-          "type": "",
-          "gender": "Male",
-          "origin": {
-            "name": "Earth",
-            "url": "https://rickandmortyapi.com/api/location/1"
-          },
-          "location": {
-            "name": "Earth",
-            "url": "https://rickandmortyapi.com/api/location/20"
-          },
-          "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-          "episode": [
-            "https://rickandmortyapi.com/api/episode/1",
-            "https://rickandmortyapi.com/api/episode/2",
-          ],
-          "url": "https://rickandmortyapi.com/api/character/1",
-          "created": "2017-11-04T18:48:46.250Z"
-        }
-    ]
+    pages: 1,
+    // error: "",
 };
 
 export default function listReducer(state = initialState, action: Action){
@@ -43,7 +39,7 @@ export default function listReducer(state = initialState, action: Action){
         case "GET_ALL":
             return {
                 ...copyState,
-                resposta: action.payload
+                resposta: action.payload.results,
               };
             
             default: return state;
