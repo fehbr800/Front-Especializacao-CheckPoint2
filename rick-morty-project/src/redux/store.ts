@@ -1,16 +1,7 @@
-import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import listReducer from "./reducers/list-reducers";
 
-const combine = combineReducers({resposta: listReducer});
+const combine = combineReducers({ info: listReducer });
 
-export type RootState = {
-    resposta: {
-        resposta: [];
-    };
-};
-
-export const store = legacy_createStore(combine, applyMiddleware(thunk));
-
-// export const store: Store<RootState> = createStore(combine);
-
+export const store = createStore(combine, applyMiddleware(thunk));

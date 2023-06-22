@@ -39,7 +39,7 @@ export default function listReducer(state = initialState, action: Action){
         case "GET_ALL":
             return {
                 ...copyState,
-                resposta: action.payload.results,
+                resposta: action.payload
               };
             
             default: return state;
