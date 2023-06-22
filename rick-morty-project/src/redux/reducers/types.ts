@@ -1,10 +1,29 @@
 type ActionGetAll = {
-    type: "GET_ALL",
-    payload: {
-        // info: {},
-        results: []
-        // error: ""
-    }
+  type: "GET_ALL",
+  payload: {
+    results: {
+      id: number;
+      name: string;
+      status: string;
+      species: string;
+      type: string;
+      gender: string;
+      origin: {
+        name: string;
+        url: string;
+      };
+      location: {
+        name: string;
+        url: string;
+      };
+      image: string;
+      episode: [string];
+      url: string;
+      created: string;
+    }[];
+  };
 };
 
-export type Action = ActionGetAll;
+
+  
+  export type Action = ActionGetAll;

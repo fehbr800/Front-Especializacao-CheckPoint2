@@ -2,30 +2,35 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchTodos } from "../redux/action/action";
 import { RootState } from "../redux/store";
+import { Dispatch } from "redux";
+import { Action } from "../redux/reducers/types";
 
 export default function Home() {
-    const dispatch = useDispatch();
-
-    const resposta = useSelector((state: RootState) => state.info.resposta);
-    console.log(resposta)
-
+    const dispatch: Dispatch<Action> = useDispatch();
+  
+    const { resposta } = useSelector((state: RootState) => state.info);
+  
+    console.log(resposta);
+  
     useEffect(() => {
-        dispatch(fetchTodos());
+      dispatch(fetchTodos());
     }, [dispatch]);
-
+  
     return (
-        <>
-            <h2>Página home</h2>
-            <div>
-                <button onClick={() => dispatch({ type: "GET_ALL" })}>Alguma coisa</button>
-                <ul>
-                    {resposta.map((results) => (
-                        <li key={results.id}>
-                            <h1>{results.title}</h1>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </>
+      <>
+        <h2>Página home</h2>
+        <div>
+          <ul>
+            {resposta.map((item) => (
+              <li key={item.id}>
+                <h1>{item.name}</h1>
+                <p>{item.status}</p>
+                <img src={item.image} alt="" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </>
     );
-}
+  }
+  
