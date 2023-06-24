@@ -26,7 +26,7 @@ const CardPersonagem = ({
   origin
 }: ICardPersonagemProps) => {
   return (
-    <div className="rounded-lg shadow-md flex m-2 bg-card">
+    <div className="rounded-lg shadow-md flex m-2 bg-card bg-opacity-20">
       <img src={imageUrl} className="w-40 rounded-s" alt="" />
       <div className="m-2">
         <h2 className="text-xl font-custom text-secundary">

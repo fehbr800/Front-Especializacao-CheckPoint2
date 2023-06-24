@@ -11,7 +11,7 @@ const Cabecalho = () => {
   return (
     <header className="bg-gray-800 py-4">
       <div className="container mx-auto px-4">
-        <div className="flex justify-center gap-8 items-center">
+        <div className="flex justify-between gap-8 items-center">
           <h1 className="font-custom text-center animate-gradient text-5xl">
            Rick And Morty
           </h1>
