@@ -4,21 +4,19 @@ import { Dispatch } from "redux";
 import { Action } from "../../redux/reducers/types";
 import Cards from "./components/Cards";
 
-
 export default function Home() {
-    const dispatch: Dispatch<Action> = useDispatch();
-  
-    const { resposta } = useSelector((state: RootState) => state.info);
-  
-   
-    return (
-      <>
-        <h2>Página home</h2>
-        <div>
-         <Cards/>
-        </div>
-       
-      </>
-    );
-  }
-  
+  const dispatch: Dispatch<Action> = useDispatch();
+
+  const { resposta } = useSelector((state: RootState) => state.info);
+
+  return (
+    <div className=" p-3">
+      <h1 className="font-custom text-center text-5xl">
+        <span className="animate-gradient">Rick And Morty</span>
+      </h1>
+      <div>
+        <Cards />
+      </div>
+    </div>
+  );
+}

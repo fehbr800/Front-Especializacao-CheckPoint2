@@ -20,7 +20,7 @@ export default function Cards() {
         <div key={item.id} className="bg-white rounded-lg shadow-md flex m-2">
           <img src={item.image} className="w-40 rounded-s" alt="" />
           <div className="m-2">
-            <h2 className="text-xl font-semibold">{item.name}</h2>
+            <h2 className="text-xl font-custom text-secundary">{item.name}</h2>
             <div className="flex items-center">
               <div
                 className={`w-2 h-2 rounded-full ${
