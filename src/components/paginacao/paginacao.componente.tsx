@@ -22,7 +22,7 @@ const Paginacao = () => {
     <div className="paginacao">
       <button
         disabled={pagination.actual === 0}
-        className={"primary"}
+        className="bg-secundary rounded p-2"
         onClick={() => PaginationGoTo(dispatch, "BACK")}
       >
         Anterior
@@ -30,7 +30,7 @@ const Paginacao = () => {
       {pagination.actual + 1}
       <button
         disabled={pagination.actual === pagination.total}
-        className={"primary"}
+        className="bg-secundary rounded p-2"
         onClick={() => PaginationGoTo(dispatch, "NEXT")}
       >
         Próximo

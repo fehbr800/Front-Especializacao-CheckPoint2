@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import "./grade-personagem.css";
 import CardPersonagem from "./card-personagem.componente";
 import { useEffect, useState } from "react";
 import { fillChars } from "../../data/store/actions/charReducerActions";
@@ -27,10 +26,10 @@ const GradePersonagem = () => {
   }, [])
 
   return (
-    <div className="grade-personagens">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2  lg:grid-cols-3">
       { chars.length > 0 && chars[pagination.actual].map((item: IChars) => (
         <div key={item.id}>
-          <CardPersonagem imageUrl={item.image} name={item.name} />
+          <CardPersonagem imageUrl={item.image} name={item.name} status={item.status} species={item.species} origin={item.origin.name}  />
         </div>
           
       ))}
