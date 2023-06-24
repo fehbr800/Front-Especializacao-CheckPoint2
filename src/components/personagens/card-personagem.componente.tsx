@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BotaoFavorito from "../botoes/botao-favorito.componente";
 
 /**
@@ -25,10 +26,14 @@ const CardPersonagem = ({
   origin
 }: ICardPersonagemProps) => {
   return (
-    <div className="rounded-lg shadow-md flex m-2 bg-card">
+    <div className="rounded-lg shadow-md flex m-2 bg-card bg-opacity-20">
       <img src={imageUrl} className="w-40 rounded-s" alt="" />
       <div className="m-2">
-        <h2 className="text-xl font-custom text-secundary">{name}</h2>
+        <h2 className="text-xl font-custom text-secundary">
+          <Link to="/" className="hover:text-color2 text-secundary">
+          {name}
+          </Link></h2>
+         
         <div className="flex items-center">
           <div
             className={`w-2 h-2 rounded-full ${

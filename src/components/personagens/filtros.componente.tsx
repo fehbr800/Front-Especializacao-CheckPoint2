@@ -1,22 +1,22 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "../../data/store";
-import "./filtros.css";
 import { changeFilterInput } from "../../data/store/actions/filterReducerActions";
 
 const Filtros = () => {
   const { inputText } = useSelector(({ filterReducer }) => filterReducer)
   const dispatch = useDispatch<any>();
   return (
-    <div className="filtros">
-      <label htmlFor="nome">Filtrar por nome:</label>
-      <input
-        type="text"
-        placeholder="Rick, Morty, Beth, Alien, ...etc"
-        name="nome"
-        value={inputText}
-        onChange={(el) => changeFilterInput(dispatch, el.target.value) }
-      />
-    </div>
+    <div className="filtros flex items-center justify-center mt-4">
+    <label htmlFor="nome" className="mr-2 ">Filtrar por nome:</label>
+    <input
+      type="text"
+      placeholder="Rick, Morty, Beth, Alien, ...etc"
+      name="nome"
+      value={inputText}
+      onChange={(el) => changeFilterInput(dispatch, el.target.value)}
+      className="border border-gray-300 rounded px-3 py-2 w-96 "
+    />
+  </div>
   );
 };
 
