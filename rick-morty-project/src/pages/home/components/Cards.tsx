@@ -17,7 +17,7 @@ export default function Cards() {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2  lg:grid-cols-3">
       {resposta.map((item) => (
-        <div key={item.id} className="bg-white rounded-lg shadow-md flex m-2">
+        <div key={item.id} className=" rounded-lg shadow-md flex m-2 bg-card">
           <img src={item.image} className="w-40 rounded-s" alt="" />
           <div className="m-2">
             <h2 className="text-xl font-custom text-secundary">{item.name}</h2>

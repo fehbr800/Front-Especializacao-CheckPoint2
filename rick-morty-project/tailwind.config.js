@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        card:"#F0F2EB",
         background: "#081221",
         secundary: "#69c8ecff"
       },
