@@ -4,10 +4,7 @@ import Paginacao from "../../components/paginacao/paginacao.componente";
 
 const PaginaInicio = () => {
   return (
-    <div className=" p-3">
-    <h1 className="font-custom text-center text-5xl">
-      <span className="animate-gradient">Rick And Morty</span>
-    </h1>
+
     <div>
      
        <Filtros />
@@ -16,7 +13,7 @@ const PaginaInicio = () => {
 
 
     </div>
-  </div>
+ 
   );
 };
 export default PaginaInicio;

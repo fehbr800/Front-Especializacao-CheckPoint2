@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "./cabecalho.css";
 
 /**
  * Cabeçalho que contém os links para navegar entre as páginas
@@ -10,24 +9,38 @@ import "./cabecalho.css";
  */
 const Cabecalho = () => {
   return (
-    <header>
-      <div>
-        <div>
-          <h2>Exame Final de Frontend IV</h2>
+    <header className="bg-gray-800 py-4">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-center gap-8 items-center">
+          <h1 className="font-custom text-center animate-gradient text-5xl">
+           Rick And Morty
+          </h1>
+          <nav className="text-white">
+            <ul className="flex space-x-4">
+              <li>
+                <Link to="/" className="hover:text-color1 text-secundary">
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/favoritos"
+                  className="hover:text-color1 text-secundary"
+                >
+                  Favoritos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/detalhe"
+                  className="hover:text-color1 text-secundary"
+                >
+                  Detalhe
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Inicio</Link>
-            </li>
-            <li>
-              <Link to="/favoritos">Favoritos</Link>
-            </li>
-            <li>
-              <Link to="/detalhe">Detalhe</Link>
-            </li>
-          </ul>
-        </nav>
       </div>
     </header>
   );

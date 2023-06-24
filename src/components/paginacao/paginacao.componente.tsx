@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import "./paginacao.css";
 import { PaginationGoTo } from "../../data/store/actions/paginationReducerAction";
 import { useSelector } from "react-redux";
 import { IPagination } from "../../data/dto/IPagination";
@@ -19,23 +18,24 @@ const Paginacao = () => {
   );
 
   return (
-    <div className="paginacao">
-      <button
-        disabled={pagination.actual === 0}
-        className="bg-secundary rounded p-2"
-        onClick={() => PaginationGoTo(dispatch, "BACK")}
-      >
-        Anterior
-      </button>
-      {pagination.actual + 1}
-      <button
-        disabled={pagination.actual === pagination.total}
-        className="bg-secundary rounded p-2"
-        onClick={() => PaginationGoTo(dispatch, "NEXT")}
-      >
-        Próximo
-      </button>
-    </div>
+    <div className="paginacao flex items-center justify-center mt-4">
+    <button
+      disabled={pagination.actual === 0}
+      className="bg-secundary text-white rounded p-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
+      onClick={() => PaginationGoTo(dispatch, "BACK")}
+    >
+      Anterior
+    </button>
+    <span className="mx-2">{pagination.actual + 1}</span>
+    <button
+      disabled={pagination.actual === pagination.total}
+      className="bg-secundary text-white rounded p-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
+      onClick={() => PaginationGoTo(dispatch, "NEXT")}
+    >
+      Próximo
+    </button>
+  </div>
+  
   );
 };
 
