@@ -17,22 +17,22 @@ export default function Cards() {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 p-3 lg:grid-cols-3">
       {resposta.map((item) => (
-        <div
-          key={item.id}
-          className="bg-white rounded-lg shadow-md flex"
-        >
-          <img src={item.image} className="w-40 rounded-lg" alt="" />
-          <div className="mx-3">
-            <div className="flex items-center mb-2">
+        <div key={item.id} className="bg-white rounded-lg shadow-md flex  m-4">
+          <img src={item.image} className="w-40 rounded-s" alt="" />
+          <div className="m-2">
+            <h2 className="text-xl font-semibold">{item.name}</h2>
+            <div className="flex items-center">
               <div
-                className={`w-4 h-4 rounded-full ${
+                className={`w-2 h-2 rounded-full ${
                   item.status === "Alive" ? "bg-green-500" : "bg-red-500"
-                } mr-2`}
+                } mr-1`}
               ></div>
-              <h2 className="text-xl font-semibold">{item.name}</h2>
+              <p className="text-gray-500"> {item.status}</p>
             </div>
-            <p className="text-gray-500 mb-2">Status: {item.status}</p>
+
             <p className="text-gray-500">Species: {item.species}</p>
+            <span className="text-gray-400">Last known location:</span>
+            <p className="text-gray-500">{item.origin.name}</p>
           </div>
         </div>
       ))}
