@@ -4,6 +4,7 @@ import { Dispatch } from "redux";
 import { Action } from "../../redux/reducers/types";
 import Cards from "./components/Cards";
 
+
 export default function Home() {
     const dispatch: Dispatch<Action> = useDispatch();
   
@@ -16,6 +17,7 @@ export default function Home() {
         <div>
          <Cards/>
         </div>
+       
       </>
     );
   }
