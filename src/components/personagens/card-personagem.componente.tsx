@@ -10,7 +10,8 @@ import BotaoFavorito from "../botoes/botao-favorito.componente";
  * @returns Elemento JSX
  */
 
-export interface ICardPersonagemProps {
+interface ICardPersonagemProps {
+  id: number;
   imageUrl: string;
   name: string;
   status: string;
@@ -19,6 +20,7 @@ export interface ICardPersonagemProps {
 }
 
 const CardPersonagem = ({
+  id,
   imageUrl,
   name,
   status,
@@ -30,7 +32,7 @@ const CardPersonagem = ({
       <img src={imageUrl} className="w-40 rounded-s" alt="" />
       <div className="m-2">
         <h2 className="text-xl font-custom text-secundary">
-          <Link to="/" className="hover:text-color2 text-secundary">
+          <Link to={`/detalhe/${id}`} className="hover:text-color2 text-secundary">
           {name}
           </Link></h2>
          
