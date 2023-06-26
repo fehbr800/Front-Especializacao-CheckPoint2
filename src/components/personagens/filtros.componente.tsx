@@ -7,7 +7,6 @@ const Filtros = () => {
   const dispatch = useDispatch<any>();
   return (
     <div className="filtros flex items-center justify-center mt-4">
-    <label htmlFor="nome" className="mr-2 ">Filtrar por nome:</label>
     <input
       type="text"
       placeholder="Rick, Morty, Beth, Alien, ...etc"
