@@ -2,6 +2,15 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "../../data/store";
 import { changeFilterInput } from "../../data/store/actions/filterReducerActions";
 
+/**
+ * Input para filtrar a resposta da api por nome do personagem
+ *
+ * 
+ *
+ *
+ * @returns Elemento JSX
+ */
+
 const Filtros = () => {
   const { inputText } = useSelector(({ filterReducer }) => filterReducer)
   const dispatch = useDispatch<any>();
