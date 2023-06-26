@@ -23,18 +23,11 @@ const Footer = () => {
                   Favoritos
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/detalhe"
-                  className="hover:text-color1 text-secundary transition-colors duration-300"
-                >
-                  Detalhe
-                </Link>
-              </li>
             </ul>
           </nav>
           <p className="text-white text-center sm:text-left mt-4 sm:mt-0">
-            © {new Date().getFullYear()} Nome da sua empresa. Todos os direitos reservados.
+            © {new Date().getFullYear()} Nome da sua empresa. Todos os direitos
+            reservados.
           </p>
         </div>
       </div>

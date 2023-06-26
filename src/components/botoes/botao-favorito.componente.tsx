@@ -1,16 +1,8 @@
 import "./botao-favorito.css";
-/**
- * Botão que indica se um elemento é favorito ou não, e dá a possibilidade de marcá-lo/desmarcá-lo
- *
- * Terá que tipar as propriedades se utilizar este componente
- *
- *
- * @returns Elemento JSX
- */
 
 interface BotaoFavoritoProps {
-  isFavorito: boolean
-  onClick: () => void
+  isFavorito: boolean;
+  onClick: () => void;
 }
 
 const BotaoFavorito = ({ isFavorito, onClick }: BotaoFavoritoProps) => {
