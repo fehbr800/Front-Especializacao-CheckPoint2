@@ -2,43 +2,41 @@ import "./Detalhe.css";
 import BotaoFavorito from "../../components/botoes/botao-favorito.componente";
 import CardEpisodio from "../../components/episodios/card-episodio.componente";
 import PersonagemSingle from "../../components/personagens/personagem-single";
-import { useSelector } from "react-redux";
-import { IChars } from "../../data/dto/IChar";
-import { useDispatch } from "react-redux";
-import {useEffect} from "react";
-import { fillChars } from "../../data/store/actions/charReducerActions";
-
+import { useSelector } from "../../data/store";
+import { Navigate, useParams } from "react-router-dom";
 
 const PaginaDetalhe = () => {
-  const dispatch = useDispatch();
-  const {charReducer: chars } = useSelector(({ charReducer}) => ({ charReducer}));
+  const { id } = useParams();
 
-  useEffect(() => {
-    // impedindo que requisições adicionais (desnecessárias) sejam feitas no primeiro load.
-    if (chars.length === 0) {
-      fillChars(dispatch)
-    }
-  }, [])
+  const { charReducer: chars } = useSelector(({ charReducer }) => ({
+    charReducer
+  }));
+  const filterCharById = () => {
+    const filtered = chars
+      .flatMap((e) => e)
+      .filter((e) => e.id.toString() === id);
+
+    return filtered.length > 0 ? filtered[0] : null;
+  };
+  const filtered = filterCharById();
 
   return (
-
     <div>
-    {
-      chars.length > 0 && chars.map((item: IChars) => (
-        <div key={item.id}>
+      {filtered ? (
+        <div key={filtered.id}>
           <h2>alguma coisa</h2>
-          <PersonagemSingle imageUrl={item.image} name={item.name} status={item.status} species={item.species} origin={item.origin.name} />
+          <PersonagemSingle
+            imageUrl={filtered.image}
+            name={filtered.name}
+            status={filtered.status}
+            species={filtered.species}
+            origin={filtered.origin.name}
+          />
         </div>
-
-      ))
-    }
+      ) : (
+        <Navigate to="404-NotFound" />
+      )}
     </div>
-
-    // <div key={item.id}>
-    //   <PersonagemSingle imageUrl={item.image} name={item.name} status={item.status} species={item.species} origin={item.origin.name} />
-    // </div>
-
-
 
     // <div className="container">
     //   <h3>{name}</h3>

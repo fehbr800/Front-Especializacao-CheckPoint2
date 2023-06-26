@@ -13,7 +13,7 @@ const Cabecalho = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between gap-8 items-center ">
           <h1 className="font-custom text-center animate-gradient text-5xl">
-            Rick And Morty
+            <Link to="/">Rick And Morty</Link>
           </h1>
           <nav className="text-white">
             <ul className="hidden sm:flex space-x-4">
@@ -31,14 +31,6 @@ const Cabecalho = () => {
                   className="hover:text-color1 text-secundary transition-colors duration-300"
                 >
                   Favoritos
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/detalhe"
-                  className="hover:text-color1 text-secundary transition-colors duration-300"
-                >
-                  Detalhe
                 </Link>
               </li>
             </ul>

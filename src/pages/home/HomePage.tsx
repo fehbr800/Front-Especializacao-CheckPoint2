@@ -4,16 +4,11 @@ import Paginacao from "../../components/paginacao/paginacao.componente";
 
 const PaginaInicio = () => {
   return (
-
     <div>
-     
-       <Filtros />
+      <Filtros />
       <GradePersonagens />
       <Paginacao />
-
-
     </div>
- 
   );
 };
 export default PaginaInicio;
