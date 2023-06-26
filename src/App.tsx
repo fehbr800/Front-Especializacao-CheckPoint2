@@ -4,6 +4,7 @@ import PaginaInicio from "./pages/home/HomePage";
 import PaginaFavoritos from "./pages/favorites/Favoritos.pagina";
 import PaginaDetalhe from "./pages/details/Detalhe.pagina";
 import Cabecalho from "./components/layout/cabecalho.componente";
+import Footer from './components/layout/footer.component';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="favoritos" element={<PaginaFavoritos />} />
         <Route path="detalhe" element={<PaginaDetalhe />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

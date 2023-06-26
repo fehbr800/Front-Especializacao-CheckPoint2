@@ -11,7 +11,7 @@ const Cabecalho = () => {
   return (
     <header className="bg-gray-800 py-4">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between gap-8 items-center">
+        <div className="flex justify-between gap-8 items-center ">
           <h1 className="font-custom text-center animate-gradient text-5xl">
             Rick And Morty
           </h1>
@@ -43,7 +43,7 @@ const Cabecalho = () => {
               </li>
             </ul>
           </nav>
-          <div className="flex sm:hidden mt-4 relative">
+          <div className="flex sm:hidden flex-row-reverse mt-4 relative">
             <button
               className="flex items-center px-3 py-2 rounded text-white bg-gray-700 hover:bg-gray-600 focus:outline-none transition-colors duration-100"
               onClick={toggleMenu}
