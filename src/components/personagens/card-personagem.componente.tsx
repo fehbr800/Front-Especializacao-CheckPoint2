@@ -10,7 +10,7 @@ import BotaoFavorito from "../botoes/botao-favorito.componente";
  * @returns Elemento JSX
  */
 
-interface ICardPersonagemProps {
+export interface ICardPersonagemProps {
   imageUrl: string;
   name: string;
   status: string;

@@ -1,23 +1,31 @@
 import "./Detalhe.css";
 import BotaoFavorito from "../../components/botoes/botao-favorito.componente";
 import CardEpisodio from "../../components/episodios/card-episodio.componente";
+import { ICardPersonagemProps } from "../../components/personagens/card-personagem.componente";
 
-const PaginaDetalhe = () => {
+const PaginaDetalhe = ({
+  imageUrl,
+  name,
+  status,
+  species,
+  origin
+}: ICardPersonagemProps) => {
+
   return (
     <div className="container">
-      <h3>Rick Sanchez</h3>
+      <h3>{name}</h3>
       <div className={"detalhe"}>
         <div className={"detalhe-header"}>
           <img
-            src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-            alt="Rick Sanchez"
+            src={imageUrl}
+            alt={name}
           />
           <div className={"detalhe-header-texto"}>
-            <p>Rick Sanchez</p>
-            <p>Planeta: Earth</p>
-            <p>Genero: Male</p>
+            <p>{name}</p>
+            <p>{origin}</p>
+            <p>{species}</p>
           </div>
-          <BotaoFavorito isFavorito={false} />
+          {/* <BotaoFavorito isFavorito={false} /> */}
         </div>
       </div>
       <h4>Lista de episódios em que o personagem apareceu</h4>
