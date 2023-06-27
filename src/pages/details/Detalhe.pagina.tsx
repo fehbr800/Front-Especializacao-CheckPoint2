@@ -12,7 +12,7 @@ const PaginaDetalhe = () => {
     charReducer
   }));
   const filterCharById = () => {
-    const filtered = chars.toShow
+    const filtered = chars.cached
       .flatMap((e) => e)
       .filter((e) => e.id.toString() === id);
 

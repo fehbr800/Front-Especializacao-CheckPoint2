@@ -21,19 +21,25 @@ function App() {
       fillChars(dispatch);
     }
   }, []);
-  return (
-    <div className="App bg-background">
-      <Cabecalho />
-      <Routes>
-        <Route path="/" element={<PaginaInicio />} />
-        <Route path="favoritos" element={<PaginaFavoritos />} />
-        <Route path="detalhe/:id" element={<PaginaDetalhe />} />
-        <Route path="404-NotFound" element={<Pagina404 />} />
-        <Route path="*" element={<Navigate to="404-NotFound" />} />
-      </Routes>
-      <Footer />
-    </div>
-  );
+
+  if (chars.cached.length > 0) {
+    return (
+      <div className="App bg-background">
+        <Cabecalho />
+        <Routes>
+          <Route path="/" element={<PaginaInicio />} />
+          <Route path="favoritos" element={<PaginaFavoritos />} />
+          <Route path="detalhe/:id" element={<PaginaDetalhe />} />
+          <Route path="404-NotFound" element={<Pagina404 />} />
+          <Route path="*" element={<Navigate to="404-NotFound" />} />
+        </Routes>
+        <Footer />
+      </div>
+    );
+  }
+  else {
+    return(<h1>Loading</h1>)
+  }
 }
 
 export default App;
