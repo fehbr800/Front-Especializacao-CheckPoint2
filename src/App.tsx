@@ -17,7 +17,7 @@ function App() {
   }));
 
   useEffect(() => {
-    if (chars.length === 0) {
+    if (chars.cached.length === 0) {
       fillChars(dispatch);
     }
   }, []);

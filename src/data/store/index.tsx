@@ -18,5 +18,3 @@ export type IRootState = ReturnType<typeof rootReducer>
 export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector
 
 export const store = createStore(rootReducer, applyMiddleware(thunk))
-
-

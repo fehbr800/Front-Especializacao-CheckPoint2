@@ -13,7 +13,10 @@ export interface IChars {
     url: string
     created: string
 }
-
+export interface ICharsReducer{
+    toShow: IChars[][]
+    cached: IChars[][]
+}
 type LocationProps = {
     name: string
     url: string

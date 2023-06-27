@@ -31,7 +31,7 @@ async function fetchAllChars() {
   }
 }
 
-async function paginateAllChars(
+export async function paginateAllChars(
   chars: IChars[],
   perPage: number
 ): Promise<IChars[][]> {
@@ -52,12 +52,19 @@ async function paginateAllChars(
 }
 
 export function fillChars(dispatch: Dispatch<any>) {
-  const itens_page = 15
-  
+  const itens_page = 15;
+
   dispatch(async () => {
     const allChars = await fetchAllChars();
-    const paginated = await paginateAllChars(allChars,itens_page );
-    dispatch({ type: CHAR_REDUCER_ENUM.FILL_CHARS, payload: paginated });
-    dispatch({ type: PAGINATION_REDUCER_ENUM.UPDATE, payload: {total:Math.round(allChars.length/itens_page)} });
+    const paginated = await paginateAllChars(allChars, itens_page);
+    dispatch({
+      type: CHAR_REDUCER_ENUM.FILL_CHARS_AND_CACHED,
+      payload: paginated
+    });
+
+    dispatch({
+      type: PAGINATION_REDUCER_ENUM.UPDATE,
+      payload: { total: Math.round(allChars.length / itens_page) }
+    });
   });
 }
