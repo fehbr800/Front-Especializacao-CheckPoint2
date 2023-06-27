@@ -15,11 +15,33 @@ const PersonagemSingle = ({
 }: ICardPersonagemIndividualProps) => {
   return (
     <>
-      <h1>{name}</h1>
-      <img src={imageUrl} alt="" />
-      <p>{status}</p>
-      <p>{species}</p>
-      <p>{origin}</p>
+      <div className="flex items-center justify-around min-h-screen">
+        <div className="max-w-md rounded-lg shadow-md overflow-hidden">
+          <div className="p-4">
+            <h1 className="text-2xl font-bold mb-2">{name}</h1>
+            <img src={imageUrl} alt="Imagem do Personagem" className="w-full mb-4" />
+            <div className="mb-2">
+              <p><span className="font-bold">Status:</span> {status} </p>
+            </div>
+            <div className="mb-2">
+              <p><span className="font-bold">Espécie:</span> {species} </p>
+            </div>
+            <div>
+              <p> <span className="font-bold">Origem:</span> {origin} </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 className="font-bold">lista de episódios: </h2>
+          <div>
+            <ul>
+              {
+                <li></li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
