@@ -11,7 +11,8 @@ export default {
         background: "#081221",
         secundary: "#69c8ecff",
         color1: "#ffff00",
-        color2:"#5CAD4A"
+        color2:"#5CAD4A",
+        color3:"#5CAD4A"
       },
       fontFamily: {
         custom: ['inkyflutterby', "sans-serif"],
@@ -19,7 +20,7 @@ export default {
       keyframes: {
         gradient: {
           "0%": { color: "#00ffff" },
-          "50%": { color: "#ffff00" },
+          "50%": { color: "#5CAD4A" },
           "100%": { color: "#00ffff" },
         },
       },
