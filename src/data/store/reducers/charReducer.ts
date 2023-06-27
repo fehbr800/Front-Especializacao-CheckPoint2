@@ -1,18 +1,24 @@
 import { AnyAction } from "@reduxjs/toolkit";
-import { IChars } from "../../dto/IChar";
+import { IChars, ICharsReducer } from "../../dto/IChar";
 
 export enum CHAR_REDUCER_ENUM {
-    FILL_CHARS = 'FILL_CHARS',
-    CLEAR_CHARS = 'CLEAR_CHARS'
+  FILL_CHARS = "FILL_CHARS",
+  CLEAR_CHARS = "CLEAR_CHARS",
+  FILL_CHARS_AND_CACHED = "FILL_CACHED"
 }
 
-const INITIAL_STATE: IChars[][] = []
+const INITIAL_STATE: ICharsReducer = { toShow: [], cached: [] };
 
-export default function charReducer(state = INITIAL_STATE, action: AnyAction): IChars[][] {
-    switch(action.type) {
-        case CHAR_REDUCER_ENUM.FILL_CHARS:
-            return action.payload as IChars[][]
-        default:
-            return state
-    }
+export default function charReducer(
+  state = INITIAL_STATE,
+  action: AnyAction
+): ICharsReducer {
+  switch (action.type) {
+    case CHAR_REDUCER_ENUM.FILL_CHARS:
+      return { ...state, toShow: action.payload };
+    case CHAR_REDUCER_ENUM.FILL_CHARS_AND_CACHED:
+      return { ...state, cached: action.payload, toShow: action.payload };
+    default:
+      return state;
+  }
 }
