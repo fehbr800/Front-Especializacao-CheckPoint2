@@ -1,4 +1,4 @@
-import "./Detalhe.css";
+
 import BotaoFavorito from "../../components/botoes/botao-favorito.componente";
 import CardEpisodio from "../../components/episodios/card-episodio.componente";
 import PersonagemSingle from "../../components/personagens/personagem-single";

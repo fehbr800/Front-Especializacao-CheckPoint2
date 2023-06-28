@@ -10,7 +10,7 @@ const Paginacao = () => {
   );
 
   return (
-    <div className="paginacao flex items-center justify-center mt-4">
+    <div className="paginacao flex items-center justify-center m-4">
       <button
         disabled={pagination.actual === 0}
         className="bg-secundary text-white rounded p-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
@@ -18,7 +18,7 @@ const Paginacao = () => {
       >
         Anterior
       </button>
-      <span className="mx-2">{pagination.actual + 1}</span>
+      <span className="mx-2 font-custom text-white">{pagination.actual + 1}</span>
       <button
         disabled={pagination.actual === pagination.total}
         className="bg-secundary text-white rounded p-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
