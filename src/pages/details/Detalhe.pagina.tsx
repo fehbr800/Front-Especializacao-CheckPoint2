@@ -31,6 +31,7 @@ const PaginaDetalhe = () => {
             status={filtered.status}
             species={filtered.species}
             origin={filtered.origin.name}
+          
           />
         </div>
       ) : (
