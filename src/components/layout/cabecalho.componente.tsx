@@ -66,14 +66,7 @@ const Cabecalho = () => {
                     Favoritos
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="/detalhe"
-                    className="block px-4 py-2 hover:text-color1 transition-colors duration-300"
-                  >
-                    Detalhe
-                  </Link>
-                </li>
+              
               </ul>
             )}
           </div>
