@@ -16,8 +16,6 @@ const PaginaInicio = () => {
     </div>
   </div>
   
-  
-
   );
 };
 export default PaginaInicio;

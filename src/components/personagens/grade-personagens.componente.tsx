@@ -2,6 +2,8 @@ import CardPersonagem from "./card-personagem.componente";
 import { IChars } from "../../data/dto/IChar";
 import { useSelector } from "../../data/store";
 
+
+
 const GradePersonagem = () => {
   const { charReducer: chars, paginationReducer: pagination } = useSelector(
     ({ charReducer, paginationReducer }) => ({ charReducer, paginationReducer })
@@ -12,7 +14,9 @@ const GradePersonagem = () => {
     {chars.toShow.length > 0 &&
       chars.toShow[pagination.actual] &&
       chars.toShow[pagination.actual].map((item: IChars) => (
+        
         <div key={item.id} className="mb-4 md:mb-0">
+          
           <CardPersonagem
             id={item.id}
             imageUrl={item.image}
