@@ -24,7 +24,6 @@ const PaginaDetalhe = () => {
     <div>
       {filtered ? (
         <div key={filtered.id}>
-          <h2>alguma coisa</h2>
           <PersonagemSingle
             imageUrl={filtered.image}
             name={filtered.name}

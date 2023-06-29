@@ -17,7 +17,7 @@ const PersonagemSingle = ({
 }: ICardPersonagemIndividualProps) => {
   return (
     <>
-      <div className="flex items-center justify-around min-h-screen">
+      <div className="flex items-center justify-around max-h-screen mb-7">
         <div className="max-w-md rounded-lg shadow-md overflow-hidden">
           <div className="p-4 text-slate-50">
             <h1 className="text-2xl font-bold mb-2">{name}</h1>
@@ -31,16 +31,6 @@ const PersonagemSingle = ({
             <div className="text-slate-50">
               <p> <span className="font-bold">Origem:</span> {origin} </p>
             </div>
-          </div>
-        </div>
-        <div>
-          <h2 className="font-bold">lista de episódios: </h2>
-          <div>
-            <ul>
-              {
-                <li> </li>
-              }
-            </ul>
           </div>
         </div>
       </div>
