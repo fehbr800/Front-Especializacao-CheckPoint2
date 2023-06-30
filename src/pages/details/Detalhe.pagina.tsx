@@ -21,7 +21,7 @@ const PaginaDetalhe = () => {
   const filtered = filterCharById();
 
   return (
-    <div>
+    <div className="max-h-full">
       {filtered ? (
         <div key={filtered.id}>
           <PersonagemSingle
