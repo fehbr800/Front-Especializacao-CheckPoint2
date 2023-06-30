@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import BotaoFavorito from "../botoes/botao-favorito.componente";
-import { LocationProps, IChars } from "../../data/dto/IChar";
-import { addFavorite, removeFavorite } from "../../data/store/reducers/favoritesReducer";
-import { useDispatch } from "react-redux";
 
 interface ICardPersonagemProps {
   id: number;
@@ -24,7 +21,6 @@ const CardPersonagem = ({
   origin
 }: ICardPersonagemProps) => {
   const [loading, setLoading] = useState(true);
-  const [isFavorito, setIsFavorito] = useState(false);
 
   useEffect(() => {
     // Simulando o carregamento dos dados
@@ -36,33 +32,6 @@ const CardPersonagem = ({
       clearTimeout(timer);
     };
   }, []);
-
-  const dispatch = useDispatch();
-
-  const location: LocationProps = {
-    name: origin,
-    url: "", // Adicione a URL desejada aqui
-  };
-  
-  const handleFavoriteClick = () => {
-    if (isFavorito) {
-      // Remove from favorites
-      dispatch(removeFavorite(id));
-      setIsFavorito(false);
-    } else {
-      // Add to favorites
-      const favoriteCharacter: IChars = {
-        id,
-        image,
-        name,
-        status,
-        species,
-        origin: location,
-      };
-      dispatch(addFavorite(favoriteCharacter));
-      setIsFavorito(true);
-    }
-  };
 
   return (
     <div className="rounded-lg shadow-md flex m-2 bg-card bg-opacity-20">
@@ -106,7 +75,7 @@ const CardPersonagem = ({
           {loading ? <Skeleton width={120} height={16} /> : origin}
         </p>
       </div>
-      <BotaoFavorito isFavorito={isFavorito} character={id} onClick={handleFavoriteClick} />
+      <BotaoFavorito isFavorito={false} onClick={() => null} />
     </div>
   );
 };
