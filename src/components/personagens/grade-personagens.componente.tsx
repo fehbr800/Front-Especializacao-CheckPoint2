@@ -1,6 +1,11 @@
 import CardPersonagem from "./card-personagem.componente";
 import { IChars } from "../../data/dto/IChar";
 import { useSelector } from "../../data/store";
+import {  } from "../../data/store/actions/charReducerActions";
+import { loadFavorites } from "../../data/store/reducers/favoritesReducer";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { FavoritesAction, fillChars, removeChars } from "../../data/store/actions/favoritosReducerAction";
 
 
 
@@ -8,6 +13,18 @@ const GradePersonagem = () => {
   const { charReducer: chars, paginationReducer: pagination } = useSelector(
     ({ charReducer, paginationReducer }) => ({ charReducer, paginationReducer })
   );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Carregue os favoritos do armazenamento ao montar o componente
+    const loadedFavorites = loadFavorites();
+    dispatch(fillChars(loadedFavorites));
+  }, [dispatch]);
+
+  const handleFavoriteAction = (action: FavoritesAction) => {
+    dispatch(action);
+  };
+
 
   if (!Array.isArray(chars.toShow[pagination.actual])) {
     return null; // ou qualquer outra ação apropriada quando não houver dados
@@ -27,6 +44,8 @@ const GradePersonagem = () => {
             status={item.status}
             species={item.species}
             origin={item.origin.name}
+            onFavoriteClick={() => handleFavoriteAction(removeChars(item.id))}
+    
           />
         </div>
       ))}

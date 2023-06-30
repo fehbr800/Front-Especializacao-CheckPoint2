@@ -17,6 +17,7 @@ interface ICardPersonagemProps {
   status: string;
   species: string;
   origin: string;
+  onFavoriteClick: () => void; // Adicione esta linha
 }
 
 const CardPersonagem = ({

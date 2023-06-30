@@ -1,3 +1,5 @@
+// botao-favorito.componente.tsx
+
 import React from "react";
 import iconsBlack from "../../assets/iconsblack.svg";
 import iconsColor from "../../assets/icons8-bookmark (1).svg";
@@ -30,7 +32,7 @@ const BotaoFavorito = ({
       ? removeChars(characterId)
       : fillChars([{ id: characterId, name, status, species, origin: origin || "" } as any]);
     dispatch(action);
-    onFavoriteClick(); // Chama o manipulador de clique externo
+    onFavoriteClick(); // Chame a função de clique do componente pai
   };
 
   const src = isFavorito ? iconsBlack : iconsColor;

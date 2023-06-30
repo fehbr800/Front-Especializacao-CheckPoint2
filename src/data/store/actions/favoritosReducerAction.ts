@@ -22,6 +22,7 @@ export const clearChars = (): AnyAction => {
   };
 };
 
+
 export type FavoritesAction = ReturnType<
   typeof fillChars | typeof removeChars | typeof clearChars
 >;
