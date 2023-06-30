@@ -15,7 +15,6 @@ const PaginaFavoritos = () => {
       <h1>Meus Favoritos</h1>
       {favorites.map((favorite) => (
         <CardPersonagem
-        
           key={favorite.id}
           id={favorite.id}
           imageUrl={favorite.image}
