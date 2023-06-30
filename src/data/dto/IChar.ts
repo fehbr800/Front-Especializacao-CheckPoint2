@@ -17,7 +17,7 @@ export interface ICharsReducer{
     toShow: IChars[][]
     cached: IChars[][]
 }
-type LocationProps = {
+export type LocationProps = {
     name: string
     url: string
 }

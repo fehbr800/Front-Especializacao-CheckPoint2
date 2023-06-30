@@ -1,18 +1,40 @@
-import { AnyAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IChars } from "../../dto/IChar";
 
-export enum CHARREDUCERENUM {
-    FILL_CHARS = "FILL_CHARS",
-    CLEAR_CHARS = "CLEAR_CHARS"
+interface FavoritesState {
+  characters: IChars[];
 }
 
-const INITIAL_STATE: IChars[] = []
+const initialState: FavoritesState = {
+  characters: [],
+};
 
-export default function favoritesReducer(state = INITIAL_STATE, action: AnyAction): IChars[] {
-    switch(action.type) {
-        case CHARREDUCERENUM.FILL_CHARS:
-            return action.payload as IChars[]
-        default:
-            return state
-    }
-}
+const favoritesSlice = createSlice({
+  name: "favorites",
+  initialState,
+  reducers: {
+    fillChars(state, action: PayloadAction<IChars[]>) {
+      state.characters = action.payload;
+    },
+    clearChars(state) {
+      state.characters = [];
+    },
+    addFavorite(state, action: PayloadAction<IChars>) {
+      state.characters.push(action.payload);
+    },
+    removeFavorite(state, action: PayloadAction<number>) {
+      state.characters = state.characters.filter(
+        (char) => char.id !== action.payload
+      );
+    },
+  },
+});
+
+export const {
+  fillChars,
+  clearChars,
+  addFavorite,
+  removeFavorite,
+} = favoritesSlice.actions;
+
+export default favoritesSlice.reducer;

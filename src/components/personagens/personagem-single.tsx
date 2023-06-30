@@ -17,8 +17,8 @@ const PersonagemSingle = ({
 }: ICardPersonagemIndividualProps) => {
   return (
     <>
-      <div className="flex items-center justify-around max-h-screen mb-7">
-        <div className="max-w-md rounded-lg shadow-md overflow-hidden">
+      <div className="flex items-center justify-around max-h-screen mb-7 h-full  overflow-y-auto ">
+        <div className="max-w-md rounded-lg shadow-md">
           <div className="p-4 text-slate-50">
             <h1 className="text-2xl font-bold mb-2">{name}</h1>
             <img src={imageUrl} alt="Imagem do Personagem" className="w-full mb-4" />
