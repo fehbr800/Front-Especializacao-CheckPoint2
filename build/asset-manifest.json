@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af10b74d.css",
+    "main.js": "/static/js/main.e2260d6c.js",
+    "static/media/rickmorty404.webp": "/static/media/rickmorty404.82b35a6f8d4c9d4e2336.webp",
+    "static/media/starfilled.svg": "/static/media/starfilled.de4b5284721dfdeb094d556aa8d0a84b.svg",
+    "static/media/starnotfilled.svg": "/static/media/starnotfilled.3000b1a9861c2cea6f069c2fb42a0b57.svg",
+    "index.html": "/index.html",
+    "main.af10b74d.css.map": "/static/css/main.af10b74d.css.map",
+    "main.e2260d6c.js.map": "/static/js/main.e2260d6c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af10b74d.css",
+    "static/js/main.e2260d6c.js"
+  ]
+}
