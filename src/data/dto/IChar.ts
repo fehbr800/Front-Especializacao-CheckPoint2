@@ -12,6 +12,7 @@ export interface IChars {
     episode: string[]
     url: string
     created: string
+    isFavorite: boolean
 }
 export interface ICharsReducer{
     toShow: IChars[][]
