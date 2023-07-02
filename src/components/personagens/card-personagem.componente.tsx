@@ -7,13 +7,11 @@ import { tooggleFavorite } from "../../data/store/actions/charReducerActions";
 import { IChars } from "../../data/dto/IChar";
 
 interface ICardPersonagemProps {
-  char: IChars
+  char: IChars;
 }
 
-const CardPersonagem = ({
-  char
-}: ICardPersonagemProps) => {
-  const dispatch = useDispatch()
+const CardPersonagem = ({ char }: ICardPersonagemProps) => {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -79,7 +77,12 @@ const CardPersonagem = ({
           {loading ? <Skeleton width={120} height={16} /> : char.origin.name}
         </p>
       </div>
-      <BotaoFavorito isFavorito={char.isFavorite} onClick={() => tooggleFavorite(dispatch, char)} />
+      <div className=" top-1 right-1">
+        <BotaoFavorito
+          isFavorito={char.isFavorite}
+          onClick={() => tooggleFavorite(dispatch, char)}
+        />
+      </div>
     </div>
   );
 };

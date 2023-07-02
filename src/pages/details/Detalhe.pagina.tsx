@@ -21,7 +21,7 @@ const PaginaDetalhe = () => {
   const filtered = filterCharById();
 
   return (
-    <div className="max-h-full">
+    <div className="h-screen overflow-hidden flex flex-col items-center justify-center">
       {filtered ? (
         <div key={filtered.id}>
           <PersonagemSingle
